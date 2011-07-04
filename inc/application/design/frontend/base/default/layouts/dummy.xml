@@ -2,7 +2,13 @@
 <layout version="0.1.0">
     <default>
 	<reference name="content">
-	    <block name="dummy" type="Twm_Core_Block_Template" template="page/html/dummy.phtml"></block>
+	    <block name="dummy/content" type="Twm_Core_Block_Template" template="page/html/dummy.phtml"></block>
+	</reference>
+	<reference name="left">
+	    <block name="dummy/left" type="Twm_Core_Block_Template" template="page/html/dummy.phtml"></block>
+	</reference>
+	<reference name="right">
+	    <block name="dummy/right" type="Twm_Core_Block_Template" template="page/html/dummy.phtml"></block>
 	</reference>
     </default>
 

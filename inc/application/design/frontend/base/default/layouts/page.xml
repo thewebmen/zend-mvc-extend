@@ -13,9 +13,9 @@
 <!--		<action method="addScript" function="appendFile" url="scripts/somescript.js" /> -->
 	    </block>
 	    <block type="Twm_Core_Block_Template" name="header" template="page/html/header.phtml" />
-	    <block type="Twm_Core_Block_Template" name="left" />
-	    <block type="Twm_Core_Block_Template" name="content" template="page/html/list.phtml"/>
-	    <block type="Twm_Core_Block_Template" name="right" />
+	    <block type="Twm_Core_Block_Template" name="left" template="page/html/list.phtml"/>
+	    <block type="Twm_Core_Block_Template" name="content" template="page/html/list.phtml" />
+	    <block type="Twm_Core_Block_Template" name="right" template="page/html/list.phtml" />
 	    <block type="Twm_Core_Block_Template" name="footer" template="page/html/footer.phtml" />
 	</block>
     </default>
