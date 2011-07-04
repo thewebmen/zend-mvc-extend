@@ -1,6 +1,6 @@
 <?php
 
-if(version_compare(PHP_VERSION, '5.3.0') >= 0) {
+if(version_compare(PHP_VERSION, '5.3.0') < 0) {
     throw new RuntimeException('PHP 5.3.0 or higher is required to run this application');
 }
 
