@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+	<reference name="content">
+	    <block name="dummy" type="Twm_Core_Block_Template" template="page/html/dummy.phtml"></block>
+	</reference>
+    </default>
+
+    <dummy_index_index>
+    </dummy_index_index>    
+</layout>

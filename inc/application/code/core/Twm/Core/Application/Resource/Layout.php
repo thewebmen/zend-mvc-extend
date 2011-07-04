@@ -18,12 +18,6 @@ class Twm_Core_Application_Resource_Layout extends Zend_Application_Resource_Res
 		case 'file':
 		    $layoutAdapter = new Twm_Core_Design_Layout_Adapter_File($this->getParams());
 		    break;
-		case 'nosql':
-		    // TODO: implement nosql adapter
-		    break;
-		case 'db':
-		    // TODO: implement db adapter
-		    break;
 		default:
 		    throw new Zend_Application_Exception('Invalid layout adapter provided');
 	    }

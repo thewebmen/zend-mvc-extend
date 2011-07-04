@@ -9,13 +9,13 @@
 		<?= $this->block->getChildHtml('header') ?>
 	    </div>
 	    <div class="span-6 column left-column">
-  		The first column
+  		<?= $this->block->getChildHtml('left') ?>
 	    </div>
 	    <div class="span-12 column center-column">
-  		The center column
+  		<?= $this->block->getChildHtml('content') ?>
 	    </div>
 	    <div class="span-6 column right-column last">
-  		The last column
+  		<?= $this->block->getChildHtml('right') ?>
 	    </div>
 	    <div class="span-24 column footer-column prepend-top">
 		<?= $this->block->getChildHtml('footer') ?>
