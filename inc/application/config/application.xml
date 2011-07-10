@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+    <production>
+	<enablePluginLoaderCache>1</enablePluginLoaderCache>
+	<phpSettings>
+	    <display_startup_errors>0</display_startup_errors>
+	    <display_errors>0</display_errors>
+	    <date>
+		<timezone>Europe/Amsterdam</timezone>
+	    </date>
+	</phpSettings>
+	<includePaths>
+	    <library><zf:const zf:name="LIB_PATH" /></library>
+	    <core><zf:const zf:name="CORE_MODULE_PATH" /></core>
+	    <local><zf:const zf:name="LOCAL_MODULE_PATH" /></local>
+	</includePaths>
+	<pluginPaths>
+	    <Twm_Core_Application_Resource>Twm/Core/Application/Resource</Twm_Core_Application_Resource>
+	</pluginPaths>
+	<bootstrap>
+	    <path><zf:const zf:name="APPLICATION_PATH" />/code/Bootstrap.php</path>
+	    <class>Bootstrap</class>
+	</bootstrap>
+	<autoloadernamespaces>
+	    <Twm>Twm</Twm>
+	</autoloadernamespaces>
+	<resources>
+	    <locale>
+		<default>nl_NL</default>
+		<force>1</force>
+	    </locale>
+	    <translate>
+		<adapter>array</adapter>
+		<content><zf:const zf:name="APPLICATION_PATH" />/../data/locales</content>
+		<options>
+		    <locale>nl</locale>
+		</options>
+		<scan>Zend_Translate::LOCALE_DIRECTORY</scan>
+	    </translate>
+	    <frontcontroller>
+		<throwExceptions>0</throwExceptions>
+		<throwerrors>0</throwerrors>
+		<moduleControllerDirectoryName></moduleControllerDirectoryName>
+		<moduleDirectory>
+		    <core><zf:const zf:name="CORE_MODULE_PATH" /></core>
+		    <local><zf:const zf:name="LOCAL_MODULE_PATH" /></local>
+		</moduleDirectory>
+		<env><zf:const zf:name="APPLICATION_ENV" /></env>
+		<defaultModule>page</defaultModule>
+		<defaultControllerName>index</defaultControllerName>
+		<defaultAction>index</defaultAction>
+		<prefixDefaultModule>1</prefixDefaultModule>
+		<plugins>
+		    <twm_core_page>Twm_Controller_Plugin_Page</twm_core_page>
+		</plugins>
+		<actionhelperpaths>
+		    <twm_controller_action_helper>Twm/Controller/Action/Helper</twm_controller_action_helper>
+		</actionhelperpaths>
+	    </frontcontroller>
+	    <session>
+		<use_only_cookies>1</use_only_cookies>
+		<remember_me_seconds>864000</remember_me_seconds>
+	    </session>
+	    <mail>
+		<transport>
+		    <type>smtp</type>
+		    <host>mail.host.nl</host>
+		    <auth>login</auth>
+		    <username>username</username>
+		    <password>password</password>
+		    <register>1</register>
+		</transport>
+	    </mail>
+	    <view>
+		<encoding>UTF-8</encoding>
+		<doctype>XHTML1_STRICT</doctype>
+		<contentType>text/html;charset=utf-8</contentType>
+		<helperPath>
+		    <Twm_View_Helper>Twm/View/Helper</Twm_View_Helper>
+		</helperPath>
+	    </view>
+	    <modules>
+		<!-- Placeholder to ensure an array is created -->
+		<placeholder />
+	    </modules>
+	    <multidb>
+		<!-- get default Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('multidb')->getDb() -->
+		<!-- get foo Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('multidb')->getDb('foo') -->
+		<default>
+		    <adapter>PDO_MYSQL</adapter>
+		    <host>127.0.0.1</host>
+		    <username>demo</username>
+		    <password>demo</password>
+		    <dbname>demo</dbname>
+		    <charset>UTF-8</charset>
+		    <default>1</default>
+		</default>
+	    </multidb>
+	    <layout>
+		<adapter>file</adapter>
+		<params>
+		    <layoutdirectoryname>layouts</layoutdirectoryname>
+		</params>
+	    </layout>
+	    <design>
+		<moduleDirecotyName>modules</moduleDirecotyName>
+		<packages>
+		    <frontend_base_default>
+			<area>frontend</area>
+			<name>base</name>
+			<theme>default</theme>
+			<active>1</active>
+		    </frontend_base_default>
+		    <frontend_client_default>
+			<area>frontend</area>
+			<name>client</name>
+			<theme>default</theme>
+			<extend>frontend_base_default</extend>
+			<active>0</active>
+		    </frontend_client_default>
+		    <backend_base_default>
+			<area>backend</area>
+			<name>base</name>
+			<theme>default</theme>
+			<active>1</active>
+		    </backend_base_default>
+		</packages>
+	    </design>
+	</resources>
+	<form>
+	    <elementPrefixPath>
+		<filter>
+		    <prefix>Twm_Filter</prefix>
+		    <path>Twm/Filter/</path>
+		    <type>filter</type>
+		</filter>
+	    </elementPrefixPath>
+	</form>
+	<twm>
+	    <dispatcher>
+		<override>
+		    <controllers>
+			<class>
+<!-- 
+			    <twm_blog_indexcontroller>Foo_Blog_IndexController</twm_blog_indexcontroller> 
+-->
+			</class>
+		    </controllers>
+		</override>
+	    </dispatcher>
+	</twm>
+	<routes>
+<!-- 
+	<news controller="news" action="list" type="Zend_Controller_Router_Route_Static" />
+-->
+	</routes>
+    </production>
+    <testing extends="production">
+	<phpSettings>
+	    <display_startup_errors>1</display_startup_errors>
+	    <display_errors>1</display_errors>
+	</phpSettings>
+	<resources>
+	    <frontcontroller>
+		<throwExceptions>0</throwExceptions>
+	    </frontcontroller>
+	</resources>
+    </testing>
+    <development extends="production">
+	<phpSettings>
+	    <display_startup_errors>1</display_startup_errors>
+	    <display_errors>1</display_errors>
+	</phpSettings>
+	<resources>
+	    <frontcontroller>
+		<throwExceptions>0</throwExceptions>
+		<disableOutputBuffering>1</disableOutputBuffering>
+	    </frontcontroller>
+	</resources>
+    </development>
+</zend-config>
