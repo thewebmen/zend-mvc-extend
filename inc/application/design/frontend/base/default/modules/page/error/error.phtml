@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Default error view
+ *  
+ * @author
+ * @version
+ */
+
+$this->headTitle('Error Page');
+?>
+<?php if ($this->message): ?>
+	<h1>The following error occurred:</h1>
+	<pre><?php echo $this->message ?></pre>	
+<?php endif; ?>

@@ -21,4 +21,12 @@
 	</default>
     
 	<page_index_index />
+	<page_error_error>
+		<reference name="root">
+			<action method="setTemplate" val="page/1column.phtml" />
+		</reference>
+		<reference name="content">
+			<block type="Twm_Core_Block_Template" name="error" template="page/error/error.phtml" />
+		</reference>		
+	</page_error_error>
 </layout>

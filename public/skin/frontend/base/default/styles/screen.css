@@ -2,5 +2,9 @@
 .demo .column {
     background-color: gray;
     min-height:100px;
-    text-align: center;
+}
+
+.demo .footer-column,
+.demo .header-column {
+	text-align: center;
 }
