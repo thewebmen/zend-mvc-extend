@@ -14,6 +14,7 @@ define ( 'CORE_MODULE_PATH', ROOT_PATH . '/inc/application/code/core/' );
 define ( 'LOCAL_MODULE_PATH', ROOT_PATH . '/inc/application/code/local/' );
 define ( 'CONFIG_PATH', APPLICATION_PATH . '/config' );
 define ( 'DESIGN_PATH', APPLICATION_PATH . '/design' );
+define ( 'PUBLIC_PATH', ROOT_PATH . '/public' );
 define ( 'LIB_PATH', ROOT_PATH . '/inc/library' );
 define ( 'DATA_PATH', ROOT_PATH . '/inc/data' );
 

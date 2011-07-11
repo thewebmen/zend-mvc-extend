@@ -114,7 +114,7 @@ class Twm_Core_View_Helper_Navigation_Extjs extends Zend_View_Helper_Navigation_
 		);
 
 		// does page have a href?
-		if ($href = $page->getHref()) {
+		if (($href = $page->getHref())) {
 			$attribs['href'] = $href;
 			$attribs['hrefTarget'] = $page->getTarget();
 		}

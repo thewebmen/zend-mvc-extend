@@ -38,38 +38,38 @@ require_once 'Zend/Application/Resource/ResourceAbstract.php';
  */
 class Twm_Core_Application_Resource_Navigation extends Zend_Application_Resource_Navigation {
 
-    public function init() {
-	if (!$this->_container) {
-	    $options = $this->getOptions();
-	    $frontend = (isset($options['frontend'])) ? $options['frontend'] : array();
-	    $backend = (isset($options['backend'])) ? $options['backend'] : array();
-	    $pages = isset($options['pages']) ? $options['pages'] : array();
-	    $this->_container['frontend'] = new Zend_Navigation($frontend);
-	    $this->_container['backend'] = new Zend_Navigation($backend);
-	    $this->_container['pages'] = new Zend_Navigation($pages);
+	public function init() {
+		if (!$this->_container) {
+			$options = $this->getOptions();
+			$frontend = (isset($options['frontend'])) ? $options['frontend'] : array();
+			$backend = (isset($options['backend'])) ? $options['backend'] : array();
+			$pages = isset($options['pages']) ? $options['pages'] : array();
+			$this->_container['frontend'] = new Zend_Navigation($frontend);
+			$this->_container['backend'] = new Zend_Navigation($backend);
+			$this->_container['pages'] = new Zend_Navigation($pages);
 
-	    if (isset($options['defaultPageType'])) {
-		Zend_Navigation_Page::setDefaultPageType($options['defaultPageType']);
-	    }
+			if (isset($options['defaultPageType'])) {
+				Zend_Navigation_Page::setDefaultPageType($options['defaultPageType']);
+			}
+		}
+
+		$this->store();
+		return $this->_container;
 	}
 
-	$this->store();
-	return $this->_container;
-    }
-
-    /**
-     * Returns navigation container
-     *
-     * @return Zend_Navigation
-     */
-    public function getContainer($area=false) {
-	if (!$area) {
-	    return $this->_container;
+	/**
+	 * Returns navigation container
+	 *
+	 * @return Zend_Navigation
+	 */
+	public function getContainer($area=false) {
+		if (!$area) {
+			return $this->_container;
+		}
+		if (isset($this->_container[$erea])) {
+			return $this->_container[$erea];
+		}
+		throw new Zend_Navigation_Exception("container [{$area}] not found");
 	}
-	if (isset($this->_container[$erea])) {
-	    return $this->_container[$erea];
-	}
-	throw new Zend_Navigation_Exception("container [{$area}] not found");
-    }
 
 }

@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <default>
-	<block type="Twm_Core_Block_Template" name="root" template="page/3column.phtml">
-	    <block type="Twm_Page_Block_Html_Head" name="head" template="page/html/head.phtml" >
-		<action method="addMeta" function="appendName" key="keywords" content="test" />
-		<action method="addMeta" function="appendHttpEquiv" key="Content-Type" content="text/html; charset=UTF-8" />
-		<action method="addMeta" function="appendHttpEquiv" key="Content-Language" content="nl-NL" />
-		<action method="addCss" function="appendStylesheet" url="styles/blueprint/screen.css" media="screen, projection"/>
-		<action method="addCss" function="appendStylesheet" url="styles/blueprint/print.css" media="print"/>
-		<action method="addCss" function="appendStylesheet" url="styles/blueprint/ie.css" media="screen, projection" conditional="lt IE 8"/>
-		<action method="addCss" function="appendStylesheet" url="styles/screen.css" media="screen, projection" />
+	<default>
+		<block type="Twm_Core_Block_Template" name="root" template="page/3column.phtml">
+			<block type="Twm_Page_Block_Html_Head" name="head" template="page/html/head.phtml" >
+				<action method="addMeta" function="appendName" key="keywords" content="test" />
+				<action method="addMeta" function="appendHttpEquiv" key="Content-Type" content="text/html; charset=UTF-8" />
+				<action method="addMeta" function="appendHttpEquiv" key="Content-Language" content="nl-NL" />
+				<action method="addCss" function="appendStylesheet" url="styles/blueprint/screen.css" media="screen, projection"/>
+				<action method="addCss" function="appendStylesheet" url="styles/blueprint/print.css" media="print"/>
+				<action method="addCss" function="appendStylesheet" url="styles/blueprint/ie.css" media="screen, projection" conditional="lt IE 8"/>
+				<action method="addCss" function="appendStylesheet" url="styles/screen.css" media="screen, projection" />
 <!--		<action method="addScript" function="appendFile" url="scripts/somescript.js" /> -->
-	    </block>
-	    <block type="Twm_Core_Block_Template" name="header" template="page/html/header.phtml" />
-	    <block type="Twm_Core_Block_Template" name="left" template="page/html/list.phtml"/>
-	    <block type="Twm_Core_Block_Template" name="content" template="page/html/list.phtml" />
-	    <block type="Twm_Core_Block_Template" name="right" template="page/html/list.phtml" />
-	    <block type="Twm_Core_Block_Template" name="footer" template="page/html/footer.phtml" />
-	</block>
-    </default>
+			</block>
+			<block type="Twm_Core_Block_Template" name="header" template="page/html/header.phtml" />
+			<block type="Twm_Core_Block_Template" name="left" template="page/html/list.phtml"/>
+			<block type="Twm_Core_Block_Template" name="content" template="page/html/list.phtml" />
+			<block type="Twm_Core_Block_Template" name="right" template="page/html/list.phtml" />
+			<block type="Twm_Core_Block_Template" name="footer" template="page/html/footer.phtml" />
+		</block>
+	</default>
     
-    <page_index_index />
+	<page_index_index />
 </layout>

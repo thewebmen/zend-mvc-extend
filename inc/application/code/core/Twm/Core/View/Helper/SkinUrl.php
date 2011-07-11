@@ -16,9 +16,9 @@ class Twm_Core_View_Helper_SkinUrl extends Zend_View_Helper_Abstract {
     public function skinUrl($file = null, $prependBaseUrl = true)
     {
         // Get baseUrl
-        $skinUrl = $this->getSkinUrl($prependBaseUrl);
+        $skinUrl = $this->getSkinUrl($file, $prependBaseUrl);
 
-        // Remove trailing slashes
+		// Remove trailing slashes
         if (null !== $file) {
             $file = '/' . ltrim($file, '/\\');
         }
@@ -26,14 +26,23 @@ class Twm_Core_View_Helper_SkinUrl extends Zend_View_Helper_Abstract {
         return $skinUrl . $file;
     }
 
-	protected function getSkinUrl($prependBaseUrl)
+	protected function getSkinUrl($file = null, $prependBaseUrl= true)
 	{
 		$package = Twm::getDesign()->getPackage();
+		$url = $package->getSkinUrl();
+		
+		while ($package && !file_exists(PUBLIC_PATH . "/{$url}/{$file}")) {
+			$package = $package->getParent();
+			if ($package) {
+				$url = $package->getSkinUrl();
+			}
+		}
+		
 		if ($prependBaseUrl)
 		{
-			return $this->view->baseUrl($package->getSkinUrl());
+			return $this->view->baseUrl($url);
 		}
-		return $package->getSkinUrl();
+		return $url;
 	}
 
 }

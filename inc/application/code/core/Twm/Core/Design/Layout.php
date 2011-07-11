@@ -28,8 +28,7 @@ class Twm_Core_Design_Layout {
 		return null;
 	}
 
-	public function getSections()
-	{
+	public function getSections() {
 		$layoutConfig = $this->getLayoutConfig();
 		return array_keys($layoutConfig);
 	}
