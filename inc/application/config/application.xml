@@ -51,7 +51,7 @@
 		<defaultAction>index</defaultAction>
 		<prefixDefaultModule>1</prefixDefaultModule>
 		<plugins>
-		    <twm_core_page>Twm_Controller_Plugin_Page</twm_core_page>
+		    <twm_core_page>Twm_Core_Controller_Plugin_Page</twm_core_page>
 		</plugins>
 		<actionhelperpaths>
 		    <twm_controller_action_helper>Twm/Controller/Action/Helper</twm_controller_action_helper>
