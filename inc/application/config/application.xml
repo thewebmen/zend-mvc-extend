@@ -14,6 +14,9 @@
 	    <core><zf:const zf:name="CORE_MODULE_PATH" /></core>
 	    <local><zf:const zf:name="LOCAL_MODULE_PATH" /></local>
 	</includePaths>
+	<autoloadernamespaces>
+	    <Twm>Twm</Twm>
+	</autoloadernamespaces>
 	<pluginPaths>
 	    <Twm_Core_Application_Resource>Twm/Core/Application/Resource</Twm_Core_Application_Resource>
 	</pluginPaths>
@@ -21,9 +24,6 @@
 	    <path><zf:const zf:name="APPLICATION_PATH" />/code/Bootstrap.php</path>
 	    <class>Bootstrap</class>
 	</bootstrap>
-	<autoloadernamespaces>
-	    <Twm>Twm</Twm>
-	</autoloadernamespaces>
 	<resources>
 	    <locale>
 		<default>nl_NL</default>
@@ -40,7 +40,7 @@
 	    <frontcontroller>
 		<throwExceptions>0</throwExceptions>
 		<throwerrors>0</throwerrors>
-		<moduleControllerDirectoryName></moduleControllerDirectoryName>
+		<moduleControllerDirectoryName>Controller</moduleControllerDirectoryName>
 		<moduleDirectory>
 		    <core><zf:const zf:name="CORE_MODULE_PATH" /></core>
 		    <local><zf:const zf:name="LOCAL_MODULE_PATH" /></local>
@@ -136,21 +136,21 @@
 		</filter>
 	    </elementPrefixPath>
 	</form>
+	<!--
 	<twm>
 	    <dispatcher>
 		<override>
 		    <controllers>
 			<class>
-<!-- 
-			    <twm_blog_indexcontroller>Foo_Blog_IndexController</twm_blog_indexcontroller> 
--->
+			    <twm_blog_indexcontroller>Foo_Blog_IndexController</twm_blog_indexcontroller>
 			</class>
 		    </controllers>
 		</override>
 	    </dispatcher>
 	</twm>
+	-->
 	<routes>
-<!-- 
+<!--
 	<news controller="news" action="list" type="Zend_Controller_Router_Route_Static" />
 -->
 	</routes>
@@ -162,7 +162,7 @@
 	</phpSettings>
 	<resources>
 	    <frontcontroller>
-		<throwExceptions>0</throwExceptions>
+		<throwExceptions>1</throwExceptions>
 	    </frontcontroller>
 	</resources>
     </testing>
@@ -173,7 +173,7 @@
 	</phpSettings>
 	<resources>
 	    <frontcontroller>
-		<throwExceptions>0</throwExceptions>
+		<throwExceptions>1</throwExceptions>
 		<disableOutputBuffering>1</disableOutputBuffering>
 	    </frontcontroller>
 	</resources>

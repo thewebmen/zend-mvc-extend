@@ -19,4 +19,5 @@ define ( 'DATA_PATH', ROOT_PATH . '/inc/data' );
 
 require_once CORE_MODULE_PATH. 'Twm/Core/Application.php';
 $application = new Twm_Core_Application ( APPLICATION_ENV, CONFIG_PATH . '/application.xml' );
+//$application = new Twm_Core_Application ( APPLICATION_ENV, CONFIG_PATH . '/application.old.ini' );
 $application->bootstrap ()->run();
